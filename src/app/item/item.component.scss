@@ -1,0 +1,12 @@
+:host{
+  display: block;
+}
+
+.item{
+  img{width: 50px}
+  //.description{color: blueviolet}
+  cursor: pointer;
+}
+.price{
+  text-decoration: line-through;
+}

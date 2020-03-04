@@ -1,0 +1,11 @@
+<div class="item" (click)="goToProduct()">
+  <div class="description">{{item.description}}</div>
+  <div class="price">{{item.price | currency:'ILS'}}</div>
+  <div class="discount">{{item.price | discount:0.1| currency:'ILS'}}</div>
+  <img [src]="item.imageUrl">
+  <button (click)="addToCartClicked(item, $event)"
+          *ngIf="!existInCart; else elseBlock">Add To Cart</button>
+  <ng-template #elseBlock>
+    <button (click)="removeFromCartClicked(item, $event)">Remove From Cart</button>
+  </ng-template>
+</div>

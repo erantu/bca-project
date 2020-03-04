@@ -1,0 +1,17 @@
+
+<div class="d-flex justify-content-between">
+  <div>
+    <a routerLink="/">Feed</a>
+    <a routerLink="/cart">Cart</a>
+  </div>
+  <div>
+        <span *ngIf="user; else elseBlock">Hello, {{user?.email}}
+          <span (click)="logout()">Logout</span>
+        </span>
+    <ng-template #elseBlock>
+      <span routerLink="login">Login</span>
+    </ng-template>
+
+  </div>
+
+</div>

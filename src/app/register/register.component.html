@@ -1,0 +1,36 @@
+<form class="form-signin" [formGroup]="form">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+
+  <label for="username" class="sr-only">User Name*</label>
+  <input type="text" id="username"
+         class="form-control" placeholder="Full Name"
+         formControlName="username">
+
+  <label for="inputEmail" class="sr-only">Email address*</label>
+  <input type="email" id="inputEmail"
+         class="form-control" placeholder="Email address"
+         formControlName="email">
+
+  <small class="error"
+         *ngIf="!form.get('email').hasError('required') && form.get('email').touched">
+    Email is required
+  </small>
+  <small class="error"
+         *ngIf="!form.get('email').hasError('email') && form.get('email').touched">
+    Email is invalid
+  </small>
+
+  <label for="inputPassword" class="sr-only">Password*</label>
+  <input type="password"
+         id="inputPassword"
+         class="form-control"
+         placeholder="Password"
+         formControlName="password">
+
+
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit"
+          (click)="submit()" [disabled]="!form.valid">Register</button>
+  <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+</form>
